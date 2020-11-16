@@ -6,7 +6,7 @@ type AppPresenterProps = {
 }
 
 const AppPresenter = ({ isLoggedIn }: AppPresenterProps) =>
-  isLoggedIn ? <span>로그인 상태</span> : <span>로그아웃 상태</span>;
+  isLoggedIn ? <span>로그인 상태</span> : <span>you are not</span>;
 
 AppPresenter.propTypes = {
   isLoggedIn: PropTypes.bool.isRequired
