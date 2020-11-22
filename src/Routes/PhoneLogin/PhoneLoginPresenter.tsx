@@ -56,9 +56,11 @@ const Button = styled.button`
 type PropsType = {
 	countryCode: string;
 	phoneNumber: string;
+	onInputChange: (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
+	onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
 };
 
-const PhoneLoginPresenter = ({ countryCode, phoneNumber }: PropsType) => {
+const PhoneLoginPresenter = ({ countryCode, phoneNumber, onInputChange, onSubmit }: PropsType) => {
 	return (
 		<Container>
 			<Helmet>
@@ -66,21 +68,23 @@ const PhoneLoginPresenter = ({ countryCode, phoneNumber }: PropsType) => {
 			</Helmet>
 			<BackArrowExtended backTo="/" />
 			<Title>핸드폰 번호 입력 (숫자만)</Title>
-			<CountrySelect value={countryCode}>
+			<CountrySelect value={countryCode} name="countryCode" onChange={onInputChange}>
 				{countries.map((country, index) => (
 					<CountryOption key={index} value={country.dial_code}>
 						{country.flag} {country.name} ({country.dial_code})
 					</CountryOption>
 				))}
 			</CountrySelect>
-			<Form>
+			<Form onSubmit={onSubmit}>
 				<Input
 					placeholder="핸드폰 번호를 숫자만 입력해주세요."
 					value={phoneNumber}
+					name="phoneNumber"
 					required={true}
 					type="text"
+					onChange={onInputChange}
 				/>
-				<Button>
+				<Button type="submit">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="24"

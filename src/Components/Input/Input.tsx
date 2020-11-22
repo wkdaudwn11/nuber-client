@@ -25,17 +25,28 @@ const Container = styled.input`
 type InputType = {
 	type?: string;
 	value: any;
+	name?: string;
 	placeholder?: string;
 	required?: boolean;
+	onChange?: any;
 };
 
-const Input = ({ type = 'text', value, placeholder, required = false }: InputType) => {
+const Input = ({
+	type = 'text',
+	value,
+	name,
+	placeholder,
+	required = false,
+	onChange,
+}: InputType) => {
 	return (
 		<Container
 			type={type}
-			placeholder={placeholder && placeholder}
 			value={value}
+			name={name && name}
+			placeholder={placeholder && placeholder}
 			required={required}
+			onChange={onChange && onChange}
 		/>
 	);
 };
