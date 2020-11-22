@@ -17,6 +17,7 @@ Client for the (N)Uber Clone Coding. ReactJS, Apollo, Typescript
     - [ ] Ride
     - [ ] Edit Account
     - [ ] Settings
-    - [ ] Saved Places
+    - [ ] Places
     - [ ] Add Place
+    - [ ] Find Address
     - [ ] Ride History
