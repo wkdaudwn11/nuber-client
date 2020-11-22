@@ -28,23 +28,23 @@ const AppPresenter = ({ isLoggedIn }: AppPresenterProps) => {
   )
 }
 
-const LoggedInRoutes = () => {
+const LoggedOutRoutes = () => {
   return (
     <Switch>
       <Route path={"/"} exact={true} component={Login} />
       <Route path={"/phone-login"} component={PhoneLogin} />
-      <Route path={"/verify-phone/:number"} component={VerifyPhone} />
+      <Route path={"/verify-phone"} component={VerifyPhone} />
       <Route path={"/social-login"} component={SocialLogin} />
       <Redirect from={"*"} to={"/"} />
     </Switch>
   )
 }
 
-const LoggedOutRoutes = () => {
+const LoggedInRoutes = () => {
   return (
     <Switch>
-      <Route path={"/"} exact={true} component={Home} />
-      <Route path={"/ride"} exact={true} component={Ride} />
+      <Route path={""} exact={true} component={Home} />
+      <Route path={"/ride/:rideId"} exact={true} component={Ride} />
       <Route path={"/edit-account"} exact={true} component={EditAccount} />
       <Route path={"/settings"} exact={true} component={Settings} />
       <Route path={"/places"} exact={true} component={Places} />

@@ -1,1 +1,1 @@
-export { default } from "./SocialLogin";
+export { default } from "./SocialLoginContainer";

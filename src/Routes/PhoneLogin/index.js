@@ -1,1 +1,1 @@
-export { default } from "./PhoneLogin";
+export { default } from "./PhoneLoginContainer";
