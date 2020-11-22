@@ -35,7 +35,7 @@ const Title = styled.h1``;
 const Footer = styled.div``;
 
 const Subtitle = styled.h2`
-  font-size: 30px;
+  font-size: 28px;
 `;
 
 const FakeInput = styled.div`
@@ -80,7 +80,7 @@ const OutHomePresenter: React.SFC<IProps> = () => (
     <Footer>
       <Link to={"/phone-login"}>
         <PhoneLogin>
-          <Subtitle>(N)Uber를 이용하실려면 로그인을 해주세요.</Subtitle>
+          <Subtitle>(N)Uber에 오신 것을 환영합니다.</Subtitle>
           <FakeInput>
             🇰🇷 +82 <Grey>핸드폰 번호를 입력해주세요.</Grey>
           </FakeInput>
