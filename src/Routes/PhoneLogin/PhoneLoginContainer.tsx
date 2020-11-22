@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 import PhoneLoginPresenter from './PhoneLoginPresenter';
 
 type stateType = {
@@ -23,8 +24,14 @@ const PhoneLoginContainer = () => {
 	const onSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
 		e.preventDefault();
 		const { countryCode, phoneNumber } = state;
-		console.log('countryCode ', countryCode);
-		console.log('phoneNumber ', phoneNumber);
+		const isValid = /^\+[1-9]{1}[0-9]{7,11}$/.test(`${countryCode}${phoneNumber}`);
+
+		if (isValid) {
+			toast.success('ok');
+			return;
+		} else {
+			toast.error('잘못된 핸드폰 번호 입니다.');
+		}
 	};
 
 	const { countryCode, phoneNumber } = state;
